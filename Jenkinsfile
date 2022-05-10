@@ -1,5 +1,5 @@
 // Defining constant global variables
-def S3_BUCKET = "s3://data-engineering-1"
+def S3_BUCKET = "s3://s3://testdataengineeringabi/devops-app/"
 def S3_BINARY_PATH = "devops/app"
 def S3_TERRAFORM_PATH = "devops/terraform"
 
