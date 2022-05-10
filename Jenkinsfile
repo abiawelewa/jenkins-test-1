@@ -67,7 +67,7 @@ pipeline {
       steps {
         sh """
               terraform -v
-              cd Labs/usecases/usecase-2/terraform/blue/
+              cd Labs/usecases/usecase-1/terraform/blue/
               terraform init
               terraform plan -out plan.out -var="RELEASE_VERSION=${params.VERSION}"
               terraform apply -auto-approve plan.out
