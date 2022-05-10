@@ -26,9 +26,9 @@ pipeline {
         // Running python setup tool to create wheel distribution file
         sh """
             source .venv/bin/activate
-            pip install -r Labs/usecases/usecase-2/requirements.txt
+            pip install -r usecase-2/requirements.txt
             pip install wheel
-            python Labs/usecases/usecase-2/setup.py bdist_wheel
+            python usecase-2/setup.py bdist_wheel
            """
       }
     }
@@ -38,7 +38,7 @@ pipeline {
         // Running the test suits present in code
         sh """
              source .venv/bin/activate
-             python Labs/usecases/usecase-2/my_application/test.py
+             python usecase-2/my_application/test.py
            """
       }
       // Generating test reports
