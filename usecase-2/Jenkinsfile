@@ -38,7 +38,7 @@ pipeline {
         // Running the test suits present in code
         sh """
              source .venv/bin/activate
-             python usecase-2/my_application/test.py
+             python usecase-2/test.py
            """
       }
       // Generating test reports
@@ -67,7 +67,7 @@ pipeline {
       steps {
         sh """
               terraform -v
-              cd Labs/usecases/usecase-2/terraform/blue/
+              cd usecase-2/terraform/blue/
               terraform init
               terraform plan -out plan.out -var="RELEASE_VERSION=${params.VERSION}"
               terraform apply -auto-approve plan.out
