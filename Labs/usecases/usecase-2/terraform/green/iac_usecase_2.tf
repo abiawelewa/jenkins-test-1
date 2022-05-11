@@ -1,5 +1,11 @@
-provider "aws" {
-  region = "us-east-1"
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.5.0"
+    }
+  }
+  required_version = ">= 0.14.9"
 }
 
 variable "VPC" {
@@ -44,7 +50,7 @@ variable "EC2_TYPE" {
 
 variable "S3_PATH" {
   type = string
-  default = "s3://devops-usecases2"
+  default = "s3://rm-binaries/devops/app/usecase2/green"	
   description = "Version to be released"
 }
 
