@@ -55,7 +55,7 @@ variable "RELEASE_VERSION" {
 }
 
 resource "aws_security_group" "basic_http" {
-  name = "sg_flask-usecase2-green2"
+  name = "sg_flask-usecase2-green-2"
   description = "Web Security Group for HTTP"
   vpc_id =  var.VPC
   ingress = [
