@@ -44,7 +44,7 @@ variable "EC2_TYPE" {
 
 variable "S3_PATH" {
   type = string
-  default = "s3://s3://testdataengineeringabi/devops-app/"
+  default = "s3://devops-usecases2"
   description = "Version to be released"
 }
 
