@@ -57,7 +57,19 @@ pipeline {
               ls dist/
               aws s3 cp dist/my_application-*.whl ${S3_BUCKET}/${S3_BINARY_PATH}/${params.VERSION}/
               deactivate
-           """
+ }
+    }
+
+    stage('Destroy') {
+      when { expression {  params.DESTROY == 'YES' }}
+      steps {
+        sh """
+              terraform -v
+              cd Labs/usecases/usecase-1/terraform
+              terraform init
+              aws s3 cp ${S3_BUCKET}/${S3_TERRAFORM_PATH}planfile .
+              terraform apply -auto-approve planfile
+           """"""
       }
     }
     //Deploy Blue stage
