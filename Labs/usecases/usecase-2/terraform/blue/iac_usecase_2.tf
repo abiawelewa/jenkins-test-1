@@ -33,7 +33,7 @@ variable "AMI" {
 }
 
 resource "aws_iam_instance_profile" "rm_iam_profile" {
-  name = "rm_iam_profile_blue"
+  name = "rm_iam_profile_blue_3"
   role = "EC2JenkinsRole"
 }
 
