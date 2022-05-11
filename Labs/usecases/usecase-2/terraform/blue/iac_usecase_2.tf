@@ -1,5 +1,14 @@
 provider "aws" {
   region = "us-east-1"
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.5.0"
+      region = "us-east-1"
+    }
+  }
+  required_version = ">= 0.14.9"
 }
 
 variable "VPC" {
@@ -33,7 +42,7 @@ variable "AMI" {
 }
 
 resource "aws_iam_instance_profile" "rm_iam_profile" {
-  name = "rm_iam_profile_blue_3"
+  name = "rm_iam_profile_blue"
   role = "EC2JenkinsRole"
 }
 
@@ -45,6 +54,7 @@ variable "EC2_TYPE" {
 variable "S3_PATH" {
   type = string
   default = "s3://devops-usecases2"
+  default = "s3://rm-binaries/devops/app/usecase2/blue"
   description = "Version to be released"
 }
 
@@ -55,7 +65,7 @@ variable "RELEASE_VERSION" {
 }
 
 resource "aws_security_group" "basic_http" {
-  name = "sg_flask-usecase2-blue-1"
+  name = "sg_flask-usecase2-blue"
   description = "Web Security Group for HTTP"
   vpc_id =  var.VPC
   ingress = [
