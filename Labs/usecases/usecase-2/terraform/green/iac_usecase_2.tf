@@ -50,7 +50,7 @@ variable "EC2_TYPE" {
 
 variable "S3_PATH" {
   type = string
-  default = "s3://devops-usecases2/devops/app/usecase2/green"	
+  default = "s3://devops-usecases2/devops/app/"	
   description = "Version to be released"
 }
 
