@@ -1,7 +1,4 @@
 // Defining constant global variables
-def S3_BUCKET = "s3://devops-usecases2"
-def S3_BINARY_PATH = "devops/app"
-def S3_TERRAFORM_PATH = "devops/terraform"
 def S3_BUCKET = "s3://rm-binaries"
 def S3_BINARY_PATH = "devops/app/usecase2/"
 def S3_TERRAFORM_PATH = "devops/terraform/usecase2/"
@@ -66,7 +63,7 @@ pipeline {
     //Deploy Blue stage
     stage('deploy-blue') {
        // Running terraform scripts and uploading plan file to s3
-       // Destroying stack : terraform apply -auto-approve -out planfile
+      // Destroying stack : terraform apply -auto-approve -out planfile
       // view binary files : terraform show -json <FILENAME>
       when { expression {  params.Deploy_ENV  == 'BLUE' }}
       steps {
